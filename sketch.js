@@ -195,10 +195,13 @@ function onClear() {
       btnPause.removeClass('active');
     }
     currentPlayingIndex = -1;
-    soundArray = [];
     for (let i = 0; i < playlistNodes.length; ++i) {
       playlistNodes[i].remove();
+      soundArray[i].dispose();
     }
+    soundArray.length = 0;
+    soundArray = [];
+    playlistNodes.length = 0;
     playlistNodes = [];
     btnShow.hide();
     btnClear.hide();
